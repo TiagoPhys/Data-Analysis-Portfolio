@@ -1,20 +1,23 @@
-# Content Popularity Analysis — Social Media Platform
+# Content Popularity on a Social Media Platform
 
-**Notebook:** [`content_popularity_analysis.ipynb`](content_popularity_analysis.ipynb) · **Brief:** [`brief/`](brief) · **Presentation:** [`report/social-buzz-presentation.pdf`](report/social-buzz-presentation.pdf)
+Notebook: [`content_popularity_analysis.ipynb`](content_popularity_analysis.ipynb). Client brief: [`brief/`](brief). Presentation: [`report/social-buzz-presentation.pdf`](report/social-buzz-presentation.pdf)
 
 ## Problem
-Social Buzz receives 100k+ posts per day and asked for **the top 5 content categories by aggregate popularity**. *(Case study from the Accenture virtual experience programme.)*
+
+Social Buzz receives more than 100,000 posts per day and asked for the 5 content categories with the highest total popularity. This is a case study from the Accenture virtual experience programme.
 
 ## Approach
-1. Cleaned three tables (content, reactions, reaction types) — dropped irrelevant columns and unscorable reactions.
-2. **Normalised category labels:** the raw data had 41 spellings for 16 categories (`animals`, `Animals`, `"animals"`).
-3. Joined the tables following the client's data model and scored every reaction (0–75).
-4. Ranked categories by total score; looked at sentiment mix, content type and monthly activity.
 
-## Key findings
+1. Cleaned the three tables (content, reactions and reaction types), dropping unused columns and reactions without a type.
+2. Standardised category labels. The raw data had 41 spellings for 16 categories, for example `animals`, `Animals` and `"animals"`.
+3. Joined the tables following the client's data model and gave every reaction its score (from 0 to 75).
+4. Ranked categories by total score, then looked at sentiment, content type and monthly activity.
+
+## Results
+
 ![Popularity by category](images/category_popularity.png)
 
-- **Top 5:** Animals, Science, Healthy eating, Technology, Food.
-- **Food is a recurring theme** (Healthy eating and Food in the top 5, Cooking close behind) — an opportunity for partnerships with food and healthy-eating brands.
-- Popularity is **volume-driven**: score per reaction is similar across categories.
-- **Data quality changed the answer:** without normalising labels, Cooking appeared in the top 5 and Food did not. Recommendation: a fixed category list at upload.
+- Top 5 categories: Animals, Science, Healthy eating, Technology and Food.
+- Food appears twice in the top 5 (Healthy eating and Food), and Cooking is 8th. Partnerships with food and healthy eating brands are a natural next step for the client.
+- The average score per reaction is similar across categories, so the ranking depends mostly on how many reactions each category gets.
+- Before the labels were standardised, Cooking was in the top 5 and Food was not. I recommended a fixed list of categories at upload.

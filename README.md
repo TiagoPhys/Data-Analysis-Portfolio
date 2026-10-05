@@ -1,30 +1,26 @@
-# Data Analysis Portfolio — Tiago
+# Data Analysis Portfolio
 
-PhD in Physics turned data analyst, based in Dublin. My research background is in stochastic processes and Monte Carlo simulation; this portfolio shows how I apply the same rigour to business data — cleaning messy inputs, testing whether patterns are real, and turning results into recommendations.
+I'm Tiago, a data analyst based in Dublin with a PhD in Physics. My research was in stochastic processes and Monte Carlo simulation. These projects apply the same habits to business data: check the data carefully, test whether a pattern is real, and finish with a clear recommendation.
 
-**Tools:** Python (pandas, NumPy, SciPy, scikit-learn, XGBoost, LightGBM, matplotlib, seaborn) · SQL · Power BI · Looker Studio
-
----
+**Tools:** Python (pandas, NumPy, SciPy, scikit-learn, XGBoost, LightGBM, matplotlib, seaborn), SQL, Power BI, Looker Studio
 
 ## Projects
 
-| # | Project | What it shows | Key result |
+| # | Project | Skills | Main result |
 |---|---|---|---|
-| 1 | [**Fraud Detection — Mobile Money**](01-fraud-detection-paysim) | Classification on 6.3M imbalanced transactions, leakage control, model comparison | XGBoost ROC AUC 0.956; analysis of why recall, not AUC, is the real challenge at 0.13% fraud |
-| 2 | [**Retail Customer Analytics — Chips Category**](02-retail-customer-analytics-quantium) | Customer segmentation, hypothesis testing, brand/pack affinity | Identified 3 segments driving sales; Mainstream young singles/couples pay significantly more per unit (Welch t-test, p < 0.001) |
-| 3 | [**Content Popularity — Social Media Platform**](03-social-media-content-analysis-accenture) | Data modelling across 3 tables, label cleaning, client presentation | Top 5 categories by engagement; showed that inconsistent labels changed the ranking |
-| 4 | [**Data Quality Assessment — Bike Retailer**](04-data-quality-assessment-kpmg) | Systematic data-quality audit with an actionable issue log | 17 issues logged across 6 quality dimensions, each with a recommended fix |
-| 5 | [**HR & Clients Dashboard — Power BI**](05-hr-clients-dashboard-powerbi) | Interactive dashboard design, KPIs, geographic view | 3-page report on contracts, clients and workforce |
+| 1 | [Fraud Detection in Mobile Money](01-fraud-detection-paysim) | Classification on 6.3M imbalanced transactions, leakage control, model comparison | XGBoost reached ROC AUC 0.956, but caught only 17% of frauds at the default threshold |
+| 2 | [Retail Customer Analytics: Chips Category](02-retail-customer-analytics-quantium) | Customer segmentation, hypothesis testing, brand and pack size affinity | Three segments drive sales; one of them pays significantly more per packet (Welch t-test, p < 0.001) |
+| 3 | [Content Popularity on a Social Media Platform](03-social-media-content-analysis-accenture) | Joining 3 tables, cleaning category labels, client presentation | Top 5 categories by engagement; inconsistent labels had changed the ranking |
+| 4 | [Data Quality Assessment for a Bike Retailer](04-data-quality-assessment-kpmg) | Data quality audit with an issue log | 17 issues across 6 quality dimensions, each with a proposed fix |
+| 5 | [HR and Clients Dashboard in Power BI](05-hr-clients-dashboard-powerbi) | Dashboard design, KPIs, map visuals | 3-page report on contracts, clients and employees |
 
-Projects 2–4 are based on case studies from the Quantium, Accenture and KPMG virtual experience programmes (Forage); the analysis and code are my own.
+Projects 2, 3 and 4 use case studies from the Quantium, Accenture and KPMG virtual experience programmes on Forage. The analysis and code are my own.
 
 <p align="center">
-  <img src="02-retail-customer-analytics-quantium/images/segment_metrics.png" width="85%" alt="Segment analysis: sales, customers, units and price per unit by life stage and price segment">
+  <img src="02-retail-customer-analytics-quantium/images/segment_metrics.png" width="85%" alt="Sales, customers, units and price per unit by customer segment">
 </p>
 
----
-
-## Running the notebooks
+## How to run
 
 ```bash
 git clone https://github.com/TiagoPhys/Data-Analysis-Portfolio.git
@@ -33,8 +29,8 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-Projects 2–4 include their data and run end to end. The fraud dataset (~470 MB) must be downloaded from [Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1) into `01-fraud-detection-paysim/`.
+Projects 2, 3 and 4 include their data. The fraud dataset (about 470 MB) is available on [Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1) and should be saved in `01-fraud-detection-paysim/`.
 
 ## Contact
 
-📧 tiago.phys@gmail.com
+tiago.phys@gmail.com

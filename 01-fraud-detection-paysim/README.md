@@ -1,34 +1,39 @@
-# Fraud Detection in Mobile Money Transactions
+# Fraud Detection in Mobile Money
 
-**Notebook:** [`fraud_detection.ipynb`](fraud_detection.ipynb)
+Notebook: [`fraud_detection.ipynb`](fraud_detection.ipynb)
 
 ## Problem
-Detect fraudulent transactions in a mobile-money system where fraud is extremely rare (0.13% of 6.3M transactions). Data: [PaySim](https://www.kaggle.com/datasets/ealaxi/paysim1), a synthetic dataset built from real mobile-money logs.
+
+Detect fraudulent transactions in a mobile money system where fraud is very rare: 0.13% of 6.3 million transactions. The data comes from [PaySim](https://www.kaggle.com/datasets/ealaxi/paysim1), a synthetic dataset built from real mobile money logs.
 
 ## Approach
-1. **EDA** — distribution of amounts (log scale), fraud by transaction type and by origin → destination.
-2. **Feature engineering** — derived the transaction direction (customer→customer, customer→merchant) from account IDs, then dropped the IDs to avoid memorisation.
-3. **Leakage control** — removed the balance columns: fraudulent transactions are cancelled in the simulation, so balances reveal the label.
-4. **Modelling** — stratified 70/30 split; compared Logistic Regression, Random Forest, LightGBM and XGBoost.
 
-## Key findings
-- All fraud happens in **TRANSFER** and **CASH_OUT** transactions between two customer accounts; a transfer is ~4x more likely to be fraud than a cash-out.
+1. Exploratory analysis: amount distributions on a log scale, and fraud by transaction type and by origin and destination.
+2. Feature engineering: created a transaction direction feature (customer to customer, customer to merchant) from the account IDs, then dropped the IDs so the models could not memorise accounts.
+3. Leakage control: removed the balance columns. Fraudulent transactions are cancelled in the simulation, so the balances reveal the label.
+4. Modelling: stratified 70/30 split, comparing Logistic Regression, Random Forest, LightGBM and XGBoost.
 
-  ![Transactions and fraud rate by type](images/transactions_by_type.png)
+## Results
 
-- **XGBoost ranks best (ROC AUC 0.956)**, but at the default threshold it catches only 17% of frauds with 92% precision. With such imbalance, the decision threshold has to be set by the cost of a missed fraud vs. a false alarm.
+All fraud happens in TRANSFER and CASH_OUT transactions between two customer accounts. A transfer is about 4 times more likely to be fraud than a cash out.
 
-  ![ROC curves](images/roc_curves.png)
+![Transactions and fraud rate by type](images/transactions_by_type.png)
+
+XGBoost ranks transactions best (ROC AUC 0.956). At the default 0.5 threshold, however, it catches only 17% of frauds, with 92% precision. With this level of imbalance, the threshold should be set from the cost of a missed fraud versus the cost of a false alarm.
+
+![ROC curves](images/roc_curves.png)
 
 | Model | Precision (fraud) | Recall (fraud) | ROC AUC |
 |---|---|---|---|
-| XGBoost | 0.92 | 0.17 | **0.956** |
-| Random Forest | 0.72 | **0.35** | 0.794 |
+| XGBoost | 0.92 | 0.17 | 0.956 |
+| Random Forest | 0.72 | 0.35 | 0.794 |
 | LightGBM | 0.59 | 0.20 | 0.886 |
 | Logistic Regression | 0.18 | 0.00 | 0.901 |
 
 ## Next steps
-PR-AUC and precision–recall curves, threshold tuning to a target recall, class weighting, time-based validation, and behavioural features (hour of day, velocity per account).
 
-## Run it
-Download the CSV from Kaggle into this folder, then run the notebook. Libraries: see [`requirements.txt`](../requirements.txt).
+Report PR-AUC and precision-recall curves, tune the threshold to a target recall, try class weighting, validate on later time periods, and add behavioural features such as hour of day and number of transactions per account.
+
+## How to run
+
+Download the CSV from Kaggle into this folder and run the notebook. Libraries are listed in [`requirements.txt`](../requirements.txt).
