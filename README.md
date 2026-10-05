@@ -13,6 +13,7 @@ I'm Tiago, a data analyst based in Dublin with a PhD in Physics. My research was
 | 3 | [Content Popularity on a Social Media Platform](03-social-media-content-analysis-accenture) | Joining 3 tables, cleaning category labels, client presentation | Top 5 categories by engagement; inconsistent labels had changed the ranking |
 | 4 | [Data Quality Assessment for a Bike Retailer](04-data-quality-assessment-kpmg) | Data quality audit with an issue log | 17 issues across 6 quality dimensions, each with a proposed fix |
 | 5 | [HR and Clients Dashboard in Power BI](05-hr-clients-dashboard-powerbi) | Dashboard design, KPIs, map visuals | 3-page report on contracts, clients and employees |
+| 6 | [Loan Approval Prediction](06-loan-approval-prediction) | Leakage checks, model comparison, interpretation, threshold choice | ROC AUC 0.97 with Logistic Regression; income and loan amount drive approval |
 
 Projects 2, 3 and 4 use case studies from the Quantium, Accenture and KPMG virtual experience programmes on Forage. The analysis and code are my own.
 
