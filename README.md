@@ -17,10 +17,6 @@ I'm Tiago, a data analyst based in Dublin with a PhD in Physics. My research was
 
 Projects 2, 3 and 4 use case studies from the Quantium, Accenture and KPMG virtual experience programmes on Forage. The analysis and code are my own.
 
-<p align="center">
-  <img src="02-retail-customer-analytics-quantium/images/segment_metrics.png" width="85%" alt="Sales, customers, units and price per unit by customer segment">
-</p>
-
 ## How to run
 
 ```bash
