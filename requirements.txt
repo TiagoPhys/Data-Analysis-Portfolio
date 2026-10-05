@@ -1,0 +1,12 @@
+pandas>=2.0
+numpy
+scipy
+matplotlib
+seaborn
+plotly
+openpyxl
+scikit-learn
+xgboost
+lightgbm
+joblib
+jupyterlab

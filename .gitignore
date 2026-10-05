@@ -1,0 +1,15 @@
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.venv/
+venv/
+
+# Large datasets downloaded separately (PaySim from Kaggle)
+01-fraud-detection-paysim/*.csv
+01-fraud-detection-paysim/*.zip
+*.pkl
+
+# OS
+.DS_Store
+Thumbs.db
